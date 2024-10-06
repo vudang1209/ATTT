@@ -1,13 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\tailieuATTT\\PlayFair_WinForm\\WindowsFormsApp1\\",
+  "WorkspaceRootPath": "D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0A4A277-3445-4940-AF43-AFC167991E3E}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\tailieuattt\\playfair_winform\\windowsformsapp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3C1FA488-EB57-4238-9279-82758ADBDCA3}|Vingenere\\Vingenere.csproj|D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\vingenere\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C1FA488-EB57-4238-9279-82758ADBDCA3}|Vingenere\\Vingenere.csproj|solutionrelative:vingenere\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3C1FA488-EB57-4238-9279-82758ADBDCA3}|Vingenere\\Vingenere.csproj|D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\vingenere\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3C1FA488-EB57-4238-9279-82758ADBDCA3}|Vingenere\\Vingenere.csproj|solutionrelative:vingenere\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0A4A277-3445-4940-AF43-AFC167991E3E}|WindowsFormsApp1\\WindowsFormsApp1.csproj|d:\\tailieuattt\\attt\\windowsformsapp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0A4A277-3445-4940-AF43-AFC167991E3E}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0A4A277-3445-4940-AF43-AFC167991E3E}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\tailieuATTT\\PlayFair_WinForm\\WindowsFormsApp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{A0A4A277-3445-4940-AF43-AFC167991E3E}|WindowsFormsApp1\\WindowsFormsApp1.csproj|D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A0A4A277-3445-4940-AF43-AFC167991E3E}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -18,33 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\tailieuATTT\\PlayFair_WinForm\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "D:\\tailieuATTT\\PlayFair_WinForm\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAIwBYBAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T10:42:21.277Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAmwK4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T16:06:39.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\Vingenere\\Form1.cs",
+              "RelativeDocumentMoniker": "Vingenere\\Form1.cs",
+              "ToolTip": "D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\Vingenere\\Form1.cs",
+              "RelativeToolTip": "Vingenere\\Form1.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAswGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T15:52:06.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\tailieuATTT\\PlayFair_WinForm\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
+              "DocumentMoniker": "D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\Vingenere\\Form1.cs",
+              "RelativeDocumentMoniker": "Vingenere\\Form1.cs",
+              "ToolTip": "D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\Vingenere\\Form1.cs [Design]",
+              "RelativeToolTip": "Vingenere\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T15:23:42.706Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\tailieuATTT\\ATTT\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "D:\\tailieuATTT\\PlayFair_WinForm\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [Design]",
+              "ToolTip": "C:\\C#\\PlayFair_WinForm\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-30T10:33:16.42Z"
             }

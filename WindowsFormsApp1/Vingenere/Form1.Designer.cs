@@ -59,6 +59,7 @@
             this.btn_GiaiMa.TabIndex = 15;
             this.btn_GiaiMa.Text = "Giải mã";
             this.btn_GiaiMa.UseVisualStyleBackColor = true;
+            this.btn_GiaiMa.Click += new System.EventHandler(this.btn_GiaiMa_Click);
             // 
             // btn_MaHoa
             // 
@@ -70,6 +71,7 @@
             this.btn_MaHoa.TabIndex = 14;
             this.btn_MaHoa.Text = "Mã hóa";
             this.btn_MaHoa.UseVisualStyleBackColor = true;
+            this.btn_MaHoa.Click += new System.EventHandler(this.btn_MaHoa_Click);
             // 
             // lb_ketQua
             // 

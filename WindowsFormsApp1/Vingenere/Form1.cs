@@ -31,23 +31,21 @@ namespace Vingenere
             {
                 char kyTu = vanBan[i];
 
-                if (char.IsLetter(kyTu)) // Kiểm tra ký tự có phải là chữ cái không
+                if (char.IsLetter(kyTu))
                 {
                     char kyTuKhoa = khoa[j % khoa.Length];
-                    char kyTuMaHoa = (char)((kyTu + kyTuKhoa - 2 * 'A') % 26 + 'A'); // Mã hóa
+                    char kyTuMaHoa = (char)((kyTu + kyTuKhoa - 2 * 'A') % 26 + 'A');
                     ketQua.Append(kyTuMaHoa);
                     j++;
                 }
                 else
                 {
-                    ketQua.Append(kyTu); // Nếu không phải chữ cái, giữ nguyên
+                    ketQua.Append(kyTu);
                 }
             }
 
             return ketQua.ToString();
         }
-
-        // Hàm giải mã Vigenère
         private string GiaiMaVigenere(string vanBan, string khoa)
         {
             vanBan = vanBan.ToUpper();
@@ -58,43 +56,37 @@ namespace Vingenere
             {
                 char kyTu = vanBan[i];
 
-                if (char.IsLetter(kyTu)) // Kiểm tra ký tự có phải là chữ cái không
+                if (char.IsLetter(kyTu))
                 {
                     char kyTuKhoa = khoa[j % khoa.Length];
-                    char kyTuGiaiMa = (char)((kyTu - kyTuKhoa + 26) % 26 + 'A'); // Giải mã
+                    char kyTuGiaiMa = (char)((kyTu - kyTuKhoa + 26) % 26 + 'A');
                     ketQua.Append(kyTuGiaiMa);
                     j++;
                 }
                 else
                 {
-                    ketQua.Append(kyTu); // Nếu không phải chữ cái, giữ nguyên
+                    ketQua.Append(kyTu);
                 }
             }
 
             return ketQua.ToString();
         }
-
-        // Xử lý sự kiện nút Mã hóa
-        private void btnMaHoa_Click(object sender, EventArgs e)
+        private bool KiemTraChuoiHopLe(string chuoi)
         {
-            string vanBan = txtVanBan.Text;   // Lấy văn bản từ TextBox
-            string khoa = txtKhoa.Text;       // Lấy từ khóa từ TextBox
-
-            if (string.IsNullOrWhiteSpace(vanBan) || string.IsNullOrWhiteSpace(khoa))
+            foreach (char kyTu in chuoi)
             {
-                MessageBox.Show("Vui lòng nhập văn bản và từ khóa!");
-                return;
+                if (!char.IsLetter(kyTu) && !char.IsWhiteSpace(kyTu))
+                {
+                    return false;
+                }
             }
-
-            string ketQuaMaHoa = MaHoaVigenere(vanBan, khoa); // Mã hóa văn bản
-            txtKetQua.Text = ketQuaMaHoa;                     // Hiển thị kết quả mã hóa
+            return true;
         }
 
-        // Xử lý sự kiện nút Giải mã
-        private void btnGiaiMa_Click(object sender, EventArgs e)
+        private void btnMaHoa_Click(object sender, EventArgs e)
         {
-            string vanBan = txtVanBan.Text;   // Lấy văn bản từ TextBox
-            string khoa = txtKhoa.Text;       // Lấy từ khóa từ TextBox
+            string vanBan = txtVanBan.Text;
+            string khoa = txtKhoa.Text;
 
             if (string.IsNullOrWhiteSpace(vanBan) || string.IsNullOrWhiteSpace(khoa))
             {
@@ -102,8 +94,56 @@ namespace Vingenere
                 return;
             }
 
-            string ketQuaGiaiMa = GiaiMaVigenere(vanBan, khoa); // Giải mã văn bản
-            txtKetQua.Text = ketQuaGiaiMa;                      // Hiển thị kết quả giải mã
+            if (!KiemTraChuoiHopLe(vanBan) || !KiemTraChuoiHopLe(khoa))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập chữ cái và khoảng trắng cho văn bản và khóa!", "Lỗi đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string ketQuaMaHoa = MaHoaVigenere(vanBan, khoa);
+            txtKetQua.Text = ketQuaMaHoa;
+        }
+
+        private void btn_MaHoa_Click(object sender, EventArgs e)
+        {
+            string vanBan = txtVanBan.Text;
+            string khoa = txtKhoa.Text;
+
+            if (string.IsNullOrWhiteSpace(vanBan) || string.IsNullOrWhiteSpace(khoa))
+            {
+                MessageBox.Show("Vui lòng nhập văn bản và từ khóa!");
+                return;
+            }
+
+            if (!KiemTraChuoiHopLe(vanBan) || !KiemTraChuoiHopLe(khoa))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập các chữ cái cho văn bản và khóa!", "Lỗi đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string ketQuaMaHoa = MaHoaVigenere(vanBan, khoa); 
+            txtKetQua.Text = ketQuaMaHoa;
+        }
+
+        private void btn_GiaiMa_Click(object sender, EventArgs e)
+        {
+            string vanBan = txtVanBan.Text;
+            string khoa = txtKhoa.Text;
+
+            if (string.IsNullOrWhiteSpace(vanBan) || string.IsNullOrWhiteSpace(khoa))
+            {
+                MessageBox.Show("Vui lòng nhập văn bản và từ khóa!");
+                return;
+            }
+
+            if (!KiemTraChuoiHopLe(vanBan) || !KiemTraChuoiHopLe(khoa))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập các chữ cái cho văn bản và khóa!", "Lỗi đầu vào", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string ketQuaGiaiMa = GiaiMaVigenere(vanBan, khoa); 
+            txtKetQua.Text = ketQuaGiaiMa;
         }
     }
 }
