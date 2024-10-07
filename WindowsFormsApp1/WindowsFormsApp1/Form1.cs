@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
 
             foreach (char c in khoa)
             {
-                if (!chuCaiTrongBang.Contains(c) && c != 'J')
+                if (!chuCaiTrongBang.Contains(c) && c != 'J' && !char.IsWhiteSpace(c))
                 {
                     chuCaiTrongBang.Add(c);
                 }
@@ -67,6 +67,67 @@ namespace WindowsFormsApp1
             return (-1, -1); 
         }
 
+        //private string MaHoa(string vanBan, string khoa)
+        //{
+        //    char[,] bang = TaoBang(khoa);
+        //    vanBan = vanBan.ToUpper().Replace("J", "I");
+
+        //    StringBuilder ketQua = new StringBuilder();
+        //    StringBuilder vanBanDaXuLy = new StringBuilder();
+
+        //    foreach (char kyTu in vanBan)
+        //    {
+        //        if (!char.IsWhiteSpace(kyTu))
+        //        {
+        //            vanBanDaXuLy.Append(kyTu);
+        //        }
+        //    }
+
+        //    int i = 0;
+        //    while (i < vanBanDaXuLy.Length)
+        //    {
+        //        char kyTu1 = vanBanDaXuLy[i];
+        //        char kyTu2 = (i + 1 < vanBanDaXuLy.Length) ? vanBanDaXuLy[i + 1] : 'X';
+
+        //        var (hang1, cot1) = TimViTri(bang, kyTu1);
+        //        var (hang2, cot2) = TimViTri(bang, kyTu2);
+
+        //        if (hang1 == hang2)
+        //        {
+        //            ketQua.Append(bang[hang1, (cot1 + 1) % 5]);
+        //            ketQua.Append(bang[hang2, (cot2 + 1) % 5]);
+        //        }
+        //        else if (cot1 == cot2)
+        //        {
+        //            ketQua.Append(bang[(hang1 + 1) % 5, cot1]);
+        //            ketQua.Append(bang[(hang2 + 1) % 5, cot2]);
+        //        }
+        //        else
+        //        {
+        //            ketQua.Append(bang[hang1, cot2]);
+        //            ketQua.Append(bang[hang2, cot1]);
+        //        }
+
+        //        i += 2;
+        //    }
+
+        //    StringBuilder ketQuaCuoi = new StringBuilder();
+        //    int chiSoMaHoa = 0;
+
+        //    for (int j = 0; j < vanBan.Length; j++)
+        //    {
+        //        if (char.IsWhiteSpace(vanBan[j]))
+        //        {
+        //            ketQuaCuoi.Append(' ');
+        //        }
+        //        else
+        //        {
+        //            ketQuaCuoi.Append(ketQua[chiSoMaHoa++]);
+        //        }
+        //    }
+
+        //    return ketQuaCuoi.ToString();
+        //}
         private string MaHoa(string vanBan, string khoa)
         {
             char[,] bang = TaoBang(khoa);
@@ -75,19 +136,28 @@ namespace WindowsFormsApp1
             StringBuilder ketQua = new StringBuilder();
             StringBuilder vanBanDaXuLy = new StringBuilder();
 
-            foreach (char kyTu in vanBan)
-            {
-                if (!char.IsWhiteSpace(kyTu))
-                {
-                    vanBanDaXuLy.Append(kyTu);
-                }
-            }
-
             int i = 0;
-            while (i < vanBanDaXuLy.Length)
+            while (i < vanBan.Length)
             {
-                char kyTu1 = vanBanDaXuLy[i];
-                char kyTu2 = (i + 1 < vanBanDaXuLy.Length) ? vanBanDaXuLy[i + 1] : 'X';
+                if (char.IsWhiteSpace(vanBan[i]))
+                {
+                    ketQua.Append(' ');
+                    i++;
+                    continue;
+                }
+
+                char kyTu1 = vanBan[i];
+                char kyTu2;
+                if (i + 1 < vanBan.Length && !char.IsWhiteSpace(vanBan[i + 1]))
+                {
+                    kyTu2 = vanBan[i + 1];
+                    i += 2;
+                }
+                else
+                {
+                    kyTu2 = 'X';
+                    i++;
+                }
 
                 var (hang1, cot1) = TimViTri(bang, kyTu1);
                 var (hang2, cot2) = TimViTri(bang, kyTu2);
@@ -107,30 +177,74 @@ namespace WindowsFormsApp1
                     ketQua.Append(bang[hang1, cot2]);
                     ketQua.Append(bang[hang2, cot1]);
                 }
-
-                i += 2;
             }
 
-            StringBuilder ketQuaCuoi = new StringBuilder();
-            int chiSoMaHoa = 0;
-
-            for (int j = 0; j < vanBan.Length; j++)
-            {
-                if (char.IsWhiteSpace(vanBan[j]))
-                {
-                    ketQuaCuoi.Append(' ');
-                }
-                else
-                {
-                    ketQuaCuoi.Append(ketQua[chiSoMaHoa++]);
-                }
-            }
-
-            return ketQuaCuoi.ToString();
+            return ketQua.ToString();
         }
 
 
 
+        //private string GiaiMa(string vanBan, string khoa)
+        //{
+        //    char[,] bang = TaoBang(khoa);
+        //    vanBan = vanBan.ToUpper();
+
+        //    StringBuilder ketQua = new StringBuilder();
+        //    StringBuilder vanBanDaXuLy = new StringBuilder();
+
+        //    foreach (char kyTu in vanBan)
+        //    {
+        //        if (!char.IsWhiteSpace(kyTu))
+        //        {
+        //            vanBanDaXuLy.Append(kyTu);
+        //        }
+        //    }
+
+        //    int i = 0;
+        //    while (i < vanBanDaXuLy.Length)
+        //    {
+        //        char kyTu1 = vanBanDaXuLy[i];
+        //        char kyTu2 = (i + 1 < vanBanDaXuLy.Length) ? vanBanDaXuLy[i + 1] : 'X';
+
+        //        var (hang1, cot1) = TimViTri(bang, kyTu1);
+        //        var (hang2, cot2) = TimViTri(bang, kyTu2);
+
+        //        if (hang1 == hang2)
+        //        {
+        //            ketQua.Append(bang[hang1, (cot1 + 4) % 5]);
+        //            ketQua.Append(bang[hang2, (cot2 + 4) % 5]);
+        //        }
+        //        else if (cot1 == cot2)
+        //        {
+        //            ketQua.Append(bang[(hang1 + 4) % 5, cot1]);
+        //            ketQua.Append(bang[(hang2 + 4) % 5, cot2]);
+        //        }
+        //        else
+        //        {
+        //            ketQua.Append(bang[hang1, cot2]);
+        //            ketQua.Append(bang[hang2, cot1]);
+        //        }
+
+        //        i += 2;
+        //    }
+
+        //    StringBuilder ketQuaCuoi = new StringBuilder();
+        //    int chiSoGiaiMa = 0;
+
+        //    for (int j = 0; j < vanBan.Length; j++)
+        //    {
+        //        if (char.IsWhiteSpace(vanBan[j]))
+        //        {
+        //            ketQuaCuoi.Append(' ');
+        //        }
+        //        else
+        //        {
+        //            ketQuaCuoi.Append(ketQua[chiSoGiaiMa++]);
+        //        }
+        //    }
+
+        //    return ketQuaCuoi.ToString();
+        //}
         private string GiaiMa(string vanBan, string khoa)
         {
             char[,] bang = TaoBang(khoa);
