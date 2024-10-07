@@ -151,7 +151,6 @@ namespace WindowsFormsApp1
                 if (i + 1 < vanBan.Length && !char.IsWhiteSpace(vanBan[i + 1]))
                 {
                     kyTu2 = vanBan[i + 1];
-
                     i += 2;
                 }
                 else
